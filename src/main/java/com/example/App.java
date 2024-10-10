@@ -10,6 +10,7 @@ import java.util.List;
 public class App {
 
     public static void main(String[] args) {
+        // INICIO EJERCICIO 4
         List<Empleado> empleados = new ArrayList<>();
         empleados.add(Empleado.builder()
                 .nombre("Ruben")
@@ -68,5 +69,35 @@ public class App {
                 System.out.println(obj);
             }
         }
+        //FIN EJERCICIO 4
+
+        //INICIO EJERCICIO 6
+        List<? super Persona> empleadosYEstudiantes;
+        empleadosYEstudiantes = new ArrayList<>();
+        empleadosYEstudiantes.add(Empleado.builder().nombre("Manuel").genero(Genero.HOMBRE)
+                .departamento(Departamento.INFORMATICA).salario(1200.5).build());
+        empleadosYEstudiantes.add(Estudiante.builder().nombre("Ruben").genero(Genero.HOMBRE)
+                .facultad(Facultad.BIOLOGIA).totalAsignaturasMatriculadas(10).build());
+        empleadosYEstudiantes.add(Estudiante.builder().nombre("Lidia").genero(Genero.MUJER)
+                .facultad(Facultad.INFORMATICA).totalAsignaturasMatriculadas(11).build());
+        empleadosYEstudiantes.add(Estudiante.builder().nombre("Laura").genero(Genero.MUJER)
+                .facultad(Facultad.FILOLOGIA).totalAsignaturasMatriculadas(9).build());
+        empleadosYEstudiantes.add(Empleado.builder().nombre("Miriam").genero(Genero.MUJER)
+                .departamento(Departamento.RRHH).salario(1100.5).build());
+        empleadosYEstudiantes.add(Empleado.builder().nombre("Alba").genero(Genero.MUJER)
+                .departamento(Departamento.CONTABILIDAD).salario(1470.21).build());
+        empleadosYEstudiantes.add(Empleado.builder().nombre("Laura").genero(Genero.MUJER)
+                .departamento(Departamento.FINANZAS).salario(1700.89).build());
+        empleadosYEstudiantes.add(Estudiante.builder().nombre("Carmen").genero(Genero.MUJER)
+                .facultad(Facultad.FILOLOGIA).totalAsignaturasMatriculadas(11).build());
+        empleadosYEstudiantes.add(Estudiante.builder().nombre("Celeste").genero(Genero.MUJER)
+                .facultad(Facultad.FILOLOGIA).totalAsignaturasMatriculadas(11).build());
+        empleadosYEstudiantes.add(Estudiante.builder().nombre("Violeta").genero(Genero.MUJER)
+                .facultad(Facultad.FILOSOFIA).totalAsignaturasMatriculadas(11).build());
+
+        // FIN EJERCICIO 6
+        
+
+
     }
 }
