@@ -96,8 +96,39 @@ public class App {
                 .facultad(Facultad.FILOSOFIA).totalAsignaturasMatriculadas(11).build());
 
         // FIN EJERCICIO 6
-        
 
+        // INICIO EJERCICIO 7
+        double sumatoriaAsignaturas = 0;
+        int studentCounter = 0;
+        double promedioAsignaturas = 0;
+
+        for (Object obj : empleadosYEstudiantes) {
+            if (obj instanceof Estudiante estudiante) {
+                sumatoriaAsignaturas += estudiante.getTotalAsignaturasMatriculadas();
+                studentCounter++;
+            }
+
+        }
+
+        promedioAsignaturas = sumatoriaAsignaturas / studentCounter;
+
+        List<Estudiante> soloEstudiantes = new ArrayList<>();
+
+        for (Object obj : empleadosYEstudiantes) {
+            // Como saber de que clase es el objeto que sacamos en cada iteracion
+            // Utilizando el operador instanceof y tambien pattern matching
+            if (obj instanceof Estudiante estudiante && estudiante.getGenero().equals(Genero.MUJER) && estudiante.getTotalAsignaturasMatriculadas() >= promedioAsignaturas) {
+                soloEstudiantes.add(Estudiante.builder()
+                .nombre(estudiante.getNombre())
+                .totalAsignaturasMatriculadas(estudiante.getTotalAsignaturasMatriculadas())
+                .genero(estudiante.getGenero())
+                .facultad(estudiante.getFacultad())
+                .build());
+            }
+
+        }
+
+        System.out.println("Lista solo estudiantes: " + soloEstudiantes);
 
     }
 }
